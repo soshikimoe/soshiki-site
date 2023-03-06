@@ -13,9 +13,10 @@ const navigation = [
 
 export const Navbar = (props: any) => {
 	const [open, setOpen] = useState(false);
+	const navbarRef = useRef<HTMLDivElement>(null);
 	return (
 		<>
-			<div className="flex sm:justify-between px-3 sm:px-10 py-2">
+			<div className="navbar flex sm:justify-between px-3 sm:px-10 py-2" ref={props.navbarRef}>
 				<div className="block sm:hidden">
 					<Hamburger toggled={open} toggle={setOpen} size={24} />
 				</div>
@@ -49,20 +50,24 @@ export const Navbar = (props: any) => {
 					))}
 				</div>
 			</div>
-			<Sidebar open={open} setOpen={setOpen} />
+			<Sidebar open={open} setOpen={setOpen} navbarRef={navbarRef} />
 		</>
 	);
 };
 
 const Sidebar = (props: any) => {
 	const sidebarRef = useRef<HTMLDivElement>(null);
+
 	useEffect(() => {
 		const handleClickOutside = (event: MouseEvent) => {
-			if (sidebarRef.current && !sidebarRef.current.contains(event.target as Node)) {
+			if (
+				sidebarRef.current &&
+				!sidebarRef.current.contains(event.target as Node) &&
+				!document.querySelector(".navbar")?.contains(event.target as Node)
+			) {
 				props.setOpen(false);
 			}
 		};
-
 		document.addEventListener("mousedown", handleClickOutside);
 
 		return () => {
