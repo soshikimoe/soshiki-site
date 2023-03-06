@@ -57,7 +57,7 @@ export const Navbar = (props: any) => {
 const Sidebar = ({ open }: any) => {
 	return (
 		<>
-			<div className="fixed h-full">
+			<div className="sm:hidden fixed h-full ">
 				<Transition
 					show={open}
 					enter="transform transition ease-in-out duration-300"
