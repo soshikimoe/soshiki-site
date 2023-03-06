@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import { useState } from "react";
+import { useState, useRef, useEffect } from "react";
 import { Squash as Hamburger } from "hamburger-react";
 import { Transition } from "@headlessui/react";
 
@@ -49,17 +49,32 @@ export const Navbar = (props: any) => {
 					))}
 				</div>
 			</div>
-			<Sidebar open={open} />
+			<Sidebar open={open} setOpen={setOpen} />
 		</>
 	);
 };
 
-const Sidebar = ({ open }: any) => {
+const Sidebar = (props: any) => {
+	const sidebarRef = useRef<HTMLDivElement>(null);
+	useEffect(() => {
+		const handleClickOutside = (event: MouseEvent) => {
+			if (sidebarRef.current && !sidebarRef.current.contains(event.target as Node)) {
+				props.setOpen(false);
+			}
+		};
+
+		document.addEventListener("mousedown", handleClickOutside);
+
+		return () => {
+			document.removeEventListener("mousedown", handleClickOutside);
+		};
+	}, [props]);
+
 	return (
 		<>
-			<div className="sm:hidden fixed h-full ">
+			<div className="sm:hidden fixed h-full" ref={sidebarRef}>
 				<Transition
-					show={open}
+					show={props.open}
 					enter="transform transition ease-in-out duration-300"
 					enterFrom="-translate-x-full h-full"
 					enterTo="translate-x-0 h-full"
