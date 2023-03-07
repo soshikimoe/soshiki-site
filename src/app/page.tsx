@@ -17,6 +17,38 @@ export default function Home() {
 					</div>
 				</div>
 			</div>
+			<div className="w-full flex my-10 items-center justify-center">
+				<div className="flex flex-col md:flex-row px-10 gap-10 md:gap-6 max-w-6xl">
+					<div className="text-center md:w-[33%] flex flex-col items-center px-4">
+						<h2 className="font-semibold text-2xl">Cloud Syncing</h2>
+						<p className="mt-2">Sync your anime, manga, and light novel lists across all your devices</p>
+						<div className="mt-4">
+							<Image alt="library-image" src="/features/library.png" width={248.4} height={441.6} />
+						</div>
+					</div>
+					<div className="text-center md:w-[33%] flex flex-col items-center px-4">
+						<h2 className="font-semibold text-2xl">Anime, Manga, and Light Novels</h2>
+						<p className="mt-2">
+							Soshiki supports watching anime as well as reading manga and light novels
+						</p>
+						<div className="mt-4">
+							<Image
+								alt="anime-manga-lightnovel-image"
+								src="/features/amln.png"
+								width={248.4}
+								height={441.6}
+							/>
+						</div>
+					</div>
+					<div className="text-center md:w-[33%] flex flex-col items-center px-4">
+						<h2 className="font-semibold text-2xl">Extensive Sources</h2>
+						<p className="mt-2">Online and offline reading from a multitude of sources</p>
+						<div className="mt-4">
+							<Image alt="sources-image" src="/features/sources.png" width={248.4} height={441.6} />
+						</div>
+					</div>
+				</div>
+			</div>
 		</>
 	);
 }
