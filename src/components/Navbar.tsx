@@ -17,7 +17,10 @@ export const Navbar = (props: any) => {
 	const navbarRef = useRef<HTMLDivElement>(null);
 	return (
 		<>
-			<div className="navbar flex sm:justify-between px-3 sm:px-10 py-2" ref={props.navbarRef}>
+			<div
+				className="navbar sticky top-0 sm:static flex sm:justify-between px-3 sm:px-10 py-2 bg-white"
+				ref={props.navbarRef}
+			>
 				<div className="block sm:hidden">
 					<Hamburger toggled={open} toggle={setOpen} size={24} />
 				</div>
