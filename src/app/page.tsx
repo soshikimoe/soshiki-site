@@ -1,4 +1,5 @@
 import { Button } from "@/components/Button";
+import { Footer } from "@/components/Footer";
 import Image from "next/image";
 
 export default function Home() {
@@ -17,7 +18,7 @@ export default function Home() {
 					</div>
 				</div>
 			</div>
-			<div className="w-full flex my-10 items-center justify-center">
+			<div className="w-full flex flex-col my-10 items-center justify-center">
 				<div className="flex flex-col md:flex-row px-10 gap-10 md:gap-6 max-w-6xl">
 					<div className="text-center md:w-[33%] flex flex-col items-center px-4">
 						<h2 className="font-semibold text-2xl">Cloud Syncing</h2>
@@ -48,7 +49,28 @@ export default function Home() {
 						</div>
 					</div>
 				</div>
+				<div className="mt-10 text-center flex flex-col md:flex-row px-10 gap-10 md:gap-6 max-w-6xl">
+					<div className="md:w-[33%] flex flex-col items-center">
+						<h2 className="font-semibold text-2xl">Automatic Tracking</h2>
+						<p className="mt-2">
+							Automatically keep track of your anime, manga, and light novels with MyAnimeList and AniList
+						</p>
+					</div>
+					<div className="md:w-[33%] flex flex-col items-center">
+						<h2 className="font-semibold text-2xl">Notifications</h2>
+						<p className="mt-2">
+							Get notified whenever a new anime episode, manga chapter, or light novel chapter is released
+						</p>
+					</div>
+					<div className="md:w-[33%] flex flex-col items-center">
+						<h2 className="font-semibold text-2xl">Aniskip</h2>
+						<p className="mt-2">
+							Automatically skip intros and outros of anime episodes powered by Aniskip
+						</p>
+					</div>
+				</div>
 			</div>
+			<Footer />
 		</>
 	);
 }
