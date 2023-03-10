@@ -36,6 +36,9 @@ bun.lockb
 # vercel
 .vercel
 
+# contentlayer
+.contentlayer
+
 # typescript
 *.tsbuildinfo
 package-lock.json
