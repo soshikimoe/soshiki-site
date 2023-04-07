@@ -32,7 +32,7 @@ export const Navbar = (props: any) => {
 				</div>
 				<div className="hidden sm:flex items-center gap-5">
 					{navigation.map(item => (
-						<>
+						<div key={item.name}>
 							{item.external ? (
 								<a
 									key={item.name}
@@ -50,7 +50,7 @@ export const Navbar = (props: any) => {
 									{item.name}
 								</Link>
 							)}
-						</>
+						</div>
 					))}
 				</div>
 			</div>
@@ -95,7 +95,7 @@ const Sidebar = (props: any) => {
 						<div ref={ref} className="w-64 bg-white border-r-2 h-full">
 							<div className="px-4 py-4 h-full flex flex-col text-primary">
 								{navigation.map(item => (
-									<>
+									<div key={item.name}>
 										{item.external ? (
 											<a
 												key={item.name}
@@ -113,7 +113,7 @@ const Sidebar = (props: any) => {
 												{item.name}
 											</Link>
 										)}
-									</>
+									</div>
 								))}
 							</div>
 						</div>
