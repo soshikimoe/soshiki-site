@@ -14,7 +14,7 @@ export default function Home() {
 					</h2>
 					<div className="mt-4 flex flex-col sm:flex-row gap-2 sm:gap-6">
 						<Button button_link="/discord" button_text="Discord" />
-						<Button button_link="https://github.com/soshikimoe" button_text="User Guide" />
+						<Button button_link="/help" button_text="User Guide" local={true} />
 					</div>
 				</div>
 			</div>

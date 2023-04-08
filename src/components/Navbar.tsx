@@ -8,6 +8,7 @@ import { Transition } from "@headlessui/react";
 
 const navigation = [
 	{ name: "Home", href: "/" },
+	{ name: "Help", href: "/help" },
 	{ name: "Github", href: "https://github.com/soshikimoe", external: true },
 	{ name: "Discord", href: "/discord", external: true },
 ];
