@@ -6,9 +6,8 @@ import Link from "next/link";
 export const Button = (props: any) => {
 	if (props.local) {
 		return (
-			<Link href={props.button_link}>
+			<Link href={props.button_link} passHref legacyBehavior>
 				<motion.a
-					href=""
 					rel="noreferrer"
 					className="
 			w-40 inline-flex justify-center items-center px-6 py-4 border border-transparent shadow-sm text-xl leading-4 font-medium rounded-md text-white bg-[#b21677] hover:bg-[#dc187f] transition-all ease-in-out duration-200

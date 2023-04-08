@@ -19,7 +19,7 @@ export const Navbar = (props: any) => {
 	return (
 		<>
 			<div
-				className="navbar sticky top-0 sm:static flex sm:justify-between px-3 sm:px-10 py-2 bg-white"
+				className="navbar sticky top-0 sm:static flex sm:justify-between px-3 sm:px-10 py-2 bg-white overflow-x-auto"
 				ref={props.navbarRef}
 			>
 				<div className="block sm:hidden">
