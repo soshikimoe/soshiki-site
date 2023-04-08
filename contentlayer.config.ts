@@ -10,11 +10,6 @@ const Article = defineDocumentType(() => ({
 			description: "The title of the post",
 			required: true,
 		},
-		description: {
-			type: "string",
-			description: "The description of the post",
-			required: true,
-		},
 		category: {
 			type: "string",
 			description: "The category of the post",

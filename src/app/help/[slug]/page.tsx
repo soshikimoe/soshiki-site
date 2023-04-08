@@ -1,3 +1,4 @@
+import { HelpSidebar } from "@/components/HelpSidebar";
 import { allArticles } from "contentlayer/generated";
 import { getMDXComponent } from "next-contentlayer/hooks";
 
@@ -19,13 +20,19 @@ const ArticleLayout = ({ params }: { params: { slug: string } }) => {
 	}
 
 	return (
-		<div>
-			<h1>{article.title}</h1>
-			<p>{article.description}</p>
-			<article>
-				<MDXContent />
-			</article>
-		</div>
+		<>
+			<div className="h-full flex">
+				<HelpSidebar />
+				<div className="pl-72">
+					<div className="px-10 py-9 max-w-4xl">
+						<h1 className="font-semibold text-3xl">{article.title}</h1>
+						<article>
+							<MDXContent />
+						</article>
+					</div>
+				</div>
+			</div>
+		</>
 	);
 };
 
