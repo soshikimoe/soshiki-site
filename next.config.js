@@ -1,6 +1,8 @@
 /** @type {import('next').NextConfig} */
 
-module.exports = {
+const { withContentlayer } = require("next-contentlayer");
+
+const config = {
 	reactStrictMode: true,
 	experimental: {
 		appDir: true,
@@ -15,3 +17,5 @@ module.exports = {
 		];
 	},
 };
+
+module.exports = withContentlayer(config);
