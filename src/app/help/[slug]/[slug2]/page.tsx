@@ -4,12 +4,13 @@ import { getMDXComponent } from "next-contentlayer/hooks";
 
 export const generateStaticParams = async () => allArticles.map(article => ({ slug: article._raw.flattenedPath }));
 export const generateMetadata = ({ params }: any) => {
-	const article = allArticles.find((article: any) => article._raw.flattenedPath === "");
+	const article = allArticles.find((article: any) => article._raw.flattenedPath === params.slug2);
 	return { title: article?.title };
 };
 
-const HelpPage = () => {
-	const article = allArticles.find(articles => articles._raw.flattenedPath === "");
+const ArticleLayoutSecond = ({ params }: { params: { slug: string; slug2: string } }) => {
+	const article = allArticles.find(articles => articles._raw.flattenedPath === `${params.slug}/${params.slug2}`);
+	console.log(article);
 
 	let MDXContent;
 
@@ -36,4 +37,4 @@ const HelpPage = () => {
 	);
 };
 
-export default HelpPage;
+export default ArticleLayoutSecond;

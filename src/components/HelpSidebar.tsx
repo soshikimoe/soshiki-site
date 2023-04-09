@@ -8,6 +8,7 @@ export const HelpSidebar = ({ params }: any) => {
 		category: article.category,
 	}));
 	const articlesByCategory = groupBy(aArticles, "category");
+	delete articlesByCategory["Help"];
 	return (
 		<>
 			<div className="w-72 bg-white border-r-2 h-full fixed">
