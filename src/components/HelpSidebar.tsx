@@ -8,24 +8,26 @@ export const HelpSidebar = ({ params }: any) => {
 		category: article.category,
 	}));
 	const articlesByCategory = groupBy(aArticles, "category");
-	delete articlesByCategory["Help"];
+	delete articlesByCategory["Index"];
 	return (
 		<>
 			<div className="w-72 bg-white border-r-2 h-full fixed">
-				<div className="px-4 py-4 h-full flex flex-col text-primary">
+				<div className="px-4 py-4 h-full flex flex-col text-primary gap-4">
 					{Object.keys(articlesByCategory).map((key, index) => (
 						<div key={key}>
 							<h1 className="text-lg font-medium">{key}</h1>
-							{articlesByCategory[key].map((article: any) => (
-								<div key={article.name}>
-									<Link
-										href={article.url}
-										className="text-base hover:bg-gray-200/80 rounded-md ease-in-out duration-200 px-2 py-1"
-									>
-										{article.name}
-									</Link>
-								</div>
-							))}
+							<div className="mt-1">
+								{articlesByCategory[key].map((article: any) => (
+									<div key={article.name}>
+										<Link
+											href={article.url}
+											className="text-base hover:bg-gray-200/80 rounded-md ease-in-out duration-200 px-2 py-1"
+										>
+											{article.name}
+										</Link>
+									</div>
+								))}
+							</div>
 						</div>
 					))}
 				</div>

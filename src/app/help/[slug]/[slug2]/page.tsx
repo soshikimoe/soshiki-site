@@ -27,9 +27,11 @@ const ArticleLayoutSecond = ({ params }: { params: { slug: string; slug2: string
 				<div className="pl-72">
 					<div className="px-10 py-9 max-w-4xl">
 						<h1 className="font-semibold text-3xl">{article.title}</h1>
-						<article>
-							<MDXContent />
-						</article>
+						<div className="mt-4">
+							<article>
+								<MDXContent />
+							</article>
+						</div>
 					</div>
 				</div>
 			</div>
