@@ -15,13 +15,22 @@ const navigation = [
 	{ name: "Discord", href: "/discord", external: true },
 ];
 
+function classNames(...classes: any) {
+	return classes.filter(Boolean).join(" ");
+}
+
 export const Navbar = (props: any) => {
 	const [open, setOpen] = useState(false);
 	const navbarRef = useRef<HTMLDivElement>(null);
+	const pathname = usePathname();
+	const border = pathname?.startsWith("/help") && "border-b-2";
 	return (
 		<>
 			<div
-				className="navbar sticky top-0 sm:static flex sm:justify-between px-3 sm:px-10 py-2 bg-white overflow-x-auto"
+				className={classNames(
+					"navbar sticky top-0 sm:static flex sm:justify-between px-3 sm:px-10 py-2 bg-white overflow-x-auto",
+					border
+				)}
 				ref={props.navbarRef}
 			>
 				<div className="block sm:hidden">
@@ -82,6 +91,7 @@ const Sidebar = (props: any) => {
 		};
 	}, [props]);
 
+	const border = pathname?.startsWith("/help") && "border-b-2";
 	return (
 		<>
 			<div className="sm:hidden fixed h-full z-50" ref={sidebarRef}>
@@ -97,7 +107,7 @@ const Sidebar = (props: any) => {
 					{ref => (
 						<div ref={ref} className="w-64 bg-white border-r-2 h-full">
 							<div className="px-4 py-4 h-full flex flex-col text-primary">
-								<div className="pb-2 border-b-2">
+								<div className={classNames("pb-4", border)}>
 									{navigation.map(item => (
 										<div key={item.name}>
 											{item.external ? (
@@ -121,7 +131,7 @@ const Sidebar = (props: any) => {
 									))}
 								</div>
 								{pathname?.startsWith("/help") && (
-									<div className="pt-2">
+									<div>
 										<HelpSidebar />
 									</div>
 								)}
