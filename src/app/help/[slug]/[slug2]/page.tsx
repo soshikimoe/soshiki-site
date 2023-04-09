@@ -1,4 +1,5 @@
 import { HelpSidebar } from "@/components/HelpSidebar";
+import { MDXStyles } from "@/components/MDXStyles";
 import { allArticles } from "contentlayer/generated";
 import { getMDXComponent } from "next-contentlayer/hooks";
 
@@ -29,7 +30,9 @@ const ArticleLayoutSecond = ({ params }: { params: { slug: string; slug2: string
 						<h1 className="font-semibold text-3xl">{article.title}</h1>
 						<div className="mt-4">
 							<article>
-								<MDXContent />
+								<MDXStyles>
+									<MDXContent />
+								</MDXStyles>
 							</article>
 						</div>
 					</div>
