@@ -5,6 +5,8 @@ import Link from "next/link";
 import { useState, useRef, useEffect } from "react";
 import { Squash as Hamburger } from "hamburger-react";
 import { Transition } from "@headlessui/react";
+import { usePathname } from "next/navigation";
+import { HelpSidebar } from "./HelpSidebar";
 
 const navigation = [
 	{ name: "Home", href: "/" },
@@ -25,7 +27,7 @@ export const Navbar = (props: any) => {
 				<div className="block sm:hidden">
 					<Hamburger toggled={open} toggle={setOpen} size={24} />
 				</div>
-				<div className="ml-4 sm:ml-0 ">
+				<div className="ml-4 sm:ml-0">
 					<Link href="/" className="flex items-center">
 						<Image alt="soshiki-logo" src="/logo.png" width={50} height={50} />
 						<h1 className="ml-2 font-semibold text-2xl text-primary">Soshiki</h1>
@@ -62,7 +64,7 @@ export const Navbar = (props: any) => {
 
 const Sidebar = (props: any) => {
 	const sidebarRef = useRef<HTMLDivElement>(null);
-
+	const pathname = usePathname();
 	useEffect(() => {
 		const handleClickOutside = (event: MouseEvent) => {
 			if (
@@ -82,7 +84,7 @@ const Sidebar = (props: any) => {
 
 	return (
 		<>
-			<div className="sm:hidden fixed h-full" ref={sidebarRef}>
+			<div className="sm:hidden fixed h-full z-50" ref={sidebarRef}>
 				<Transition
 					show={props.open}
 					enter="transform transition ease-in-out duration-300"
@@ -95,27 +97,34 @@ const Sidebar = (props: any) => {
 					{ref => (
 						<div ref={ref} className="w-64 bg-white border-r-2 h-full">
 							<div className="px-4 py-4 h-full flex flex-col text-primary">
-								{navigation.map(item => (
-									<div key={item.name}>
-										{item.external ? (
-											<a
-												key={item.name}
-												href={item.href}
-												className="text-lg font-medium hover:bg-gray-200/80 rounded-md ease-in-out duration-200 px-3 py-2"
-											>
-												{item.name}
-											</a>
-										) : (
-											<Link
-												key={item.name}
-												href={item.href}
-												className="text-lg font-medium hover:bg-gray-200/80 rounded-md ease-in-out duration-200 px-3 py-2"
-											>
-												{item.name}
-											</Link>
-										)}
+								<div className="pb-2 border-b-2">
+									{navigation.map(item => (
+										<div key={item.name}>
+											{item.external ? (
+												<a
+													key={item.name}
+													href={item.href}
+													className="text-lg font-medium hover:bg-gray-200/80 rounded-md ease-in-out duration-200 px-3 py-2"
+												>
+													{item.name}
+												</a>
+											) : (
+												<Link
+													key={item.name}
+													href={item.href}
+													className="text-lg font-medium hover:bg-gray-200/80 rounded-md ease-in-out duration-200 px-3 py-2"
+												>
+													{item.name}
+												</Link>
+											)}
+										</div>
+									))}
+								</div>
+								{pathname?.startsWith("/help") && (
+									<div className="pt-2">
+										<HelpSidebar />
 									</div>
-								))}
+								)}
 							</div>
 						</div>
 					)}

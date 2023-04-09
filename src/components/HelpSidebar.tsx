@@ -11,8 +11,8 @@ export const HelpSidebar = ({ params }: any) => {
 	delete articlesByCategory["Index"];
 	return (
 		<>
-			<div className="w-72 bg-white border-r-2 h-full fixed">
-				<div className="px-4 py-4 h-full flex flex-col text-primary gap-4">
+			<div className="sm:w-72 bg-white sm:border-r-2 h-full">
+				<div className="pl-2 sm:px-4 py-4 h-full flex flex-col text-primary gap-4">
 					{Object.keys(articlesByCategory).map((key, index) => (
 						<div key={key}>
 							<h1 className="text-lg font-medium">{key}</h1>
