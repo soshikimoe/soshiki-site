@@ -11,7 +11,9 @@ export function MDXStyles({ children }: MDXStylesProps) {
 		<section
 			className={classNames(
 				"text-primary relative",
-				"prose-h1:text-lg prose-h1:font-medium",
+				"prose-h1:text-2xl prose-h1:font-medium prose-h1:mb-2",
+				"prose-h2:text-xl prose-h2:font-medium prose-h2:mb-2",
+				"prose-h3:text-lg prose-h3:font-medium",
 				"prose-a:text-[#b21677]"
 			)}
 		>
