@@ -28,8 +28,8 @@ const HelpPage = () => {
 				</div>
 				<div className="sm:pl-72 w-full">
 					<div className="px-10 py-9 max-w-4xl mx-auto">
-						<h1 className="font-semibold text-3xl">{article.title}</h1>
-						<div className="mt-4">
+						<h1 className="font-semibold text-3xl text-primary">{article.title}</h1>
+						<div className="mt-6">
 							<article>
 								<MDXStyles>
 									<MDXContent />
