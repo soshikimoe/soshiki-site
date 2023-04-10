@@ -5,7 +5,7 @@ import { getMDXComponent } from "next-contentlayer/hooks";
 
 export const generateStaticParams = async () => allArticles.map(article => ({ slug: article._raw.flattenedPath }));
 export const generateMetadata = ({ params }: any) => {
-	const article = allArticles.find((article: any) => article._raw.flattenedPath === params.slug2);
+	const article = allArticles.find(articles => articles._raw.flattenedPath === `${params.slug}/${params.slug2}`);
 	return { title: article?.title };
 };
 
