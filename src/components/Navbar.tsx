@@ -107,7 +107,7 @@ const Sidebar = (props: any) => {
 					{ref => (
 						<div ref={ref} className="w-64 bg-white border-r-2 h-full">
 							<div className="px-4 py-4 h-full flex flex-col text-primary">
-								<div className={classNames("pb-4", border)}>
+								<div className={classNames("pb-4 flex flex-col gap-2", border)}>
 									{navigation.map(item => (
 										<div key={item.name}>
 											{item.external ? (
