@@ -1,3 +1,3 @@
-# soshiki-site
+# Soshiki Website
 
-heavy wip site for soshiki
+Website for the Soshiki application
