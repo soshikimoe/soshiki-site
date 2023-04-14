@@ -3,7 +3,8 @@ import { MDXStyles } from "@/components/MDXStyles";
 import { allArticles } from "contentlayer/generated";
 import { getMDXComponent } from "next-contentlayer/hooks";
 
-export const generateStaticParams = async () => allArticles.map(article => ({ slug: article._raw.flattenedPath }));
+export const generateStaticParams = async () =>
+	allArticles.map(article => ({ slug: article._raw.flattenedPath || "404" }));
 export const generateMetadata = ({ params }: any) => {
 	const article = allArticles.find((article: any) => article._raw.flattenedPath === params.slug);
 	return { title: article?.title };
