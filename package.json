@@ -5,8 +5,9 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
+    "start-nobuild": "next start -p 3601",
+    "lint": "next lint",
+    "start": "next build && next start -p 3601"
   },
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.4.0",
