@@ -28,7 +28,7 @@ export const Navbar = (props: any) => {
 		<>
 			<div
 				className={classNames(
-					"navbar sticky top-0 sm:static flex sm:justify-between px-3 sm:px-10 py-2 bg-white overflow-x-auto",
+					"navbar z-50 sticky top-0 sm:static flex sm:justify-between px-3 sm:px-10 py-2 bg-white overflow-x-auto",
 					border
 				)}
 				ref={props.navbarRef}
