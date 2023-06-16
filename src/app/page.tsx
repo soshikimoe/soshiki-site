@@ -14,6 +14,7 @@ export default function Home() {
 					</h2>
 					<div className="mt-4 flex flex-col sm:flex-row gap-2 sm:gap-6">
 						<Button button_link="/discord" button_text="Discord" />
+						<Button button_link="/kofi" button_text="Ko-fi" />
 						<Button button_link="/help" button_text="User Guide" local={true} />
 					</div>
 				</div>
@@ -22,7 +23,7 @@ export default function Home() {
 				<div className="flex flex-col md:flex-row px-10 gap-10 md:gap-6 max-w-6xl">
 					<div className="text-center md:w-[33%] flex flex-col items-center px-4">
 						<h2 className="font-semibold text-2xl">Cloud Syncing</h2>
-						<p className="mt-2">Sync your anime, manga, and light novel lists across all your devices</p>
+						<p className="mt-2">Sync your anime, manga, and light novel lists across all your devices, all by logging in with your Discord account</p>
 						<div className="mt-4">
 							<Image alt="library-image" src="/features/library.png" width={248.4} height={441.6} />
 						</div>
@@ -30,22 +31,22 @@ export default function Home() {
 					<div className="text-center md:w-[33%] flex flex-col items-center px-4">
 						<h2 className="font-semibold text-2xl">Anime, Manga, and Light Novels</h2>
 						<p className="mt-2">
-							Soshiki supports watching anime as well as reading manga and light novels
+							Soshiki supports watching anime as well as reading manga and light novels, with beautiful viewers for each
 						</p>
 						<div className="mt-4">
 							<Image
-								alt="anime-manga-lightnovel-image"
-								src="/features/amln.png"
+								alt="anime-player-image"
+								src="/features/anime.png"
 								width={248.4}
 								height={441.6}
 							/>
 						</div>
 					</div>
 					<div className="text-center md:w-[33%] flex flex-col items-center px-4">
-						<h2 className="font-semibold text-2xl">Extensive Sources</h2>
-						<p className="mt-2">Online and offline reading from a multitude of sources</p>
+						<h2 className="font-semibold text-2xl">Extensive Features</h2>
+						<p className="mt-2">Supports multiple reading modes for manga, text and paragraph customization for novels, intro skips for anime, and much more</p>
 						<div className="mt-4">
-							<Image alt="sources-image" src="/features/sources.png" width={248.4} height={441.6} />
+							<Image alt="manga-reader-image" src="/features/manga.png" width={248.4} height={441.6} />
 						</div>
 					</div>
 				</div>
@@ -53,19 +54,19 @@ export default function Home() {
 					<div className="md:w-[33%] flex flex-col items-center">
 						<h2 className="font-semibold text-2xl">Automatic Tracking</h2>
 						<p className="mt-2">
-							Automatically keep track of your anime, manga, and light novels with MyAnimeList and AniList
+							Automatically keep track of your anime, manga, and light novels with trackers such as MyAnimeList and AniList
 						</p>
 					</div>
 					<div className="md:w-[33%] flex flex-col items-center">
-						<h2 className="font-semibold text-2xl">Notifications</h2>
+						<h2 className="font-semibold text-2xl">Content Sources</h2>
 						<p className="mt-2">
-							Get notified whenever a new anime episode, manga chapter, or light novel chapter is released
+							An extensive source library and open-source source development toolkit means access to anything you can imagine
 						</p>
 					</div>
 					<div className="md:w-[33%] flex flex-col items-center">
-						<h2 className="font-semibold text-2xl">Aniskip</h2>
+						<h2 className="font-semibold text-2xl">Intro Skip</h2>
 						<p className="mt-2">
-							Automatically skip intros and outros of anime episodes powered by Aniskip
+							Automatically skip intros and outros of anime episodes powered by anime-skip
 						</p>
 					</div>
 				</div>

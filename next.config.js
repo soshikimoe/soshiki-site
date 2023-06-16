@@ -14,6 +14,11 @@ const config = {
 				destination: "https://discord.gg/EZWxGRv4Eh",
 				permanent: false,
 			},
+			{
+				source: "/kofi",
+				destination: "https://ko-fi.com/jimiswaytooepic",
+				permanent: false,
+			},
 		];
 	},
 };
